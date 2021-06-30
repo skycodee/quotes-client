@@ -7,6 +7,8 @@ import { QuotesListComponent } from './components/quotes-list/quotes-list.compon
 import { SingleQuoteComponent } from './components/single-quote/single-quote.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { RegisterComponent } from './components/register/register.component';
     QuotesListComponent,
     SingleQuoteComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
