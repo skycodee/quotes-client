@@ -1,1 +1,16 @@
-<p>List of all quotes</p>
+<h2>{{ pageTitle }}</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Narrator</th>
+        <th>Text</th>
+        <th>Date</th>
+    </tr>
+    <tr *ngFor='let q of quotes'>
+        <td>{{q.id}}</td>
+        <td>{{q.quoteNarrator}}</td>
+        <td>{{q.quoteText}}</td>
+        <td>{{q.quoteDate}}</td>
+    </tr>
+</table>
