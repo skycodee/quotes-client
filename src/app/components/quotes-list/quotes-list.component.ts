@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Host, OnInit, Input, Output } from '@angular/core';
 import { Quote } from '../../models/Quote';
-import { QuotesService } from '../../services/quotes.service';
+import { QuotesComponent } from '../quotes/quotes.component';
 
 @Component({
   selector: 'app-quotes-list',
@@ -10,16 +10,20 @@ import { QuotesService } from '../../services/quotes.service';
 export class QuotesListComponent implements OnInit {
 
   pageTitle = "Quotes List";
-  quotes: Quote[] = [];
+  @Input() quotes: Quote[] = [];
+  @Input() selectedQuote : Quote = new Quote();
 
-  constructor(private quotesService: QuotesService) { }
+  constructor(@Host() private parent: QuotesComponent) { }
 
-  ngOnInit(): void {
-    
-    this.quotesService.getQuotes().subscribe(data => {
-      this.quotes = data;
-    })
+  ngOnInit(): void { 
+ }
 
-  }
+ selectQuote(quote: Quote) {
+   this.parent.selectedQuote = quote;
+ }
 
+ deleteQuote(quote: Quote) {
+   this.parent.deleteQuote(quote);
+ }
+ 
 }

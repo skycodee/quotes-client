@@ -1,0 +1,24 @@
+
+<h3 class="margin-top-5pct">Insert Quote:</h3>
+
+<div>
+    <label>ID:</label>
+    <input type="text" class="form-control" [(ngModel)]='quote.id'>
+</div>
+<div>
+    <label>Narrator:</label>
+    <input type="text" class="form-control" [(ngModel)]='quote.quoteNarrator'>
+</div>
+<div>
+    <label>Text:</label>
+    <textarea class="form-control" [(ngModel)]='quote.quoteText'></textarea>
+</div>
+<div>
+    <label>Date:</label>
+    <input type="text" class="form-control" [(ngModel)]='quote.quoteDate'>
+</div>
+<div>
+    <br/> <br/>
+    <button class="btn btn-success" (click)='insertQuote()' *ngIf='!edit'> Insert Quote </button>
+    <button class="btn btn-success" (click)='updateQuote()' *ngIf='edit'> Edit Quote </button>
+</div>

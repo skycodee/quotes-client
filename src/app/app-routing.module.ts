@@ -1,26 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { InsertQuoteComponent } from './components/insert-quote/insert-quote.component';
 import { LoginComponent } from './components/login/login.component';
 import { QuotesListComponent } from './components/quotes-list/quotes-list.component';
 import { RegisterComponent } from './components/register/register.component';
-import { SingleQuoteComponent } from './components/single-quote/single-quote.component';
+import { QuotesComponent } from './components/quotes/quotes.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: QuotesListComponent
+    component: QuotesComponent
   },
   { 
     path: 'quotes',
-    component: QuotesListComponent
+    component: QuotesComponent
   },
   {
-    path: 'singleQuote',
-    component: SingleQuoteComponent
+    path: 'insertQuote',
+    component: InsertQuoteComponent
   },
   {
-    path: 'singleQuote/:id',
-    component: SingleQuoteComponent
+    path: 'insertQuote/:id',
+    component: InsertQuoteComponent
   },
   {
     path: 'login',

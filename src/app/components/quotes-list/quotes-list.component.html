@@ -6,11 +6,23 @@
         <th>Narrator</th>
         <th>Text</th>
         <th>Date</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
-    <tr *ngFor='let q of quotes'>
+    <tr *ngFor='let q of quotes' >
         <td>{{q.id}}</td>
         <td>{{q.quoteNarrator}}</td>
         <td>{{q.quoteText}}</td>
         <td>{{q.quoteDate}}</td>
+        <td>
+            <button class="btn btn-warning" (click)='selectQuote(q)'>
+                Edit
+            </button>
+        </td>
+        <td>
+            <button class="btn btn-danger" (click)='deleteQuote(q)'>
+                Delete
+            </button>
+        </td>
     </tr>
 </table>
